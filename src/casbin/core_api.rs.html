@@ -96,6 +96,7 @@
 <span id="93">93</span>
 <span id="94">94</span>
 <span id="95">95</span>
+<span id="96">96</span>
 </pre><div class="example-wrap"><pre class="rust ">
 <span class="kw">use</span> <span class="kw">crate</span>::{
     <span class="ident">Adapter</span>, <span class="ident">Effector</span>, <span class="ident">EnforceArgs</span>, <span class="ident">Event</span>, <span class="ident">EventEmitter</span>, <span class="ident">Filter</span>, <span class="ident">Model</span>, <span class="prelude-ty">Result</span>,
@@ -112,9 +113,10 @@
 <span class="kw">use</span> <span class="kw">crate</span>::<span class="ident">emitter</span>::<span class="ident">EventData</span>;
 
 <span class="kw">use</span> <span class="ident">async_trait</span>::<span class="ident">async_trait</span>;
+<span class="kw">use</span> <span class="ident">parking_lot</span>::<span class="ident">RwLock</span>;
 <span class="kw">use</span> <span class="ident">rhai</span>::<span class="ident">ImmutableString</span>;
 
-<span class="kw">use</span> <span class="ident">std</span>::<span class="ident">sync</span>::{<span class="ident">Arc</span>, <span class="ident">RwLock</span>};
+<span class="kw">use</span> <span class="ident">std</span>::<span class="ident">sync</span>::<span class="ident">Arc</span>;
 
 <span class="attribute">#[<span class="ident">async_trait</span>]</span>
 <span class="kw">pub</span> <span class="kw">trait</span> <span class="ident">CoreApi</span>: <span class="ident">Send</span> <span class="op">+</span> <span class="ident">Sync</span> {
