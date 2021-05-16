@@ -6,6 +6,12 @@ use crate::{
     Result,
 };
 
+#[cfg(feature = "runtime-actix")]
+use std::{
+    io::{Error as IoError, ErrorKind},
+    path::Path,
+};
+
 #[cfg(feature = "runtime-async-std")]
 use async_std::{
     fs::File,
