@@ -19,6 +19,17 @@ use tokio::io::{
 #[cfg(all(feature = "runtime-tokio", not(target_arch = "wasm32")))]
 use tokio::fs::File;
 
+#[cfg(feature = "runtime-actix")]
+use std::{io::Cursor, path::Path};
+
+#[cfg(feature = "runtime-actix")]
+use tokio::io::{
+    AsyncBufReadExt, AsyncReadExt, BufReader, Error as IoError, ErrorKind,
+};
+
+#[cfg(all(feature = "runtime-actix", not(target_arch = "wasm32")))]
+use tokio::fs::File;
+
 use std::collections::HashMap;
 
 const DEFAULT_SECTION: &str = "default";
