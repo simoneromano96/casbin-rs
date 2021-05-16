@@ -19,6 +19,9 @@ use async_std::path::Path;
 #[cfg(feature = "runtime-tokio")]
 use std::path::Path;
 
+#[cfg(feature = "runtime-actix")]
+use std::path::Path;
+
 use std::{collections::HashMap, sync::Arc};
 
 #[derive(Clone, Default)]
