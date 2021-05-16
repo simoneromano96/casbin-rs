@@ -11,6 +11,11 @@ use std::{
     io::{Error as IoError, ErrorKind},
     path::Path,
 };
+#[cfg(feature = "runtime-actix")]
+use tokio::{
+    fs::File,
+    io::{AsyncBufReadExt, AsyncWriteExt, BufReader},
+};
 
 #[cfg(feature = "runtime-async-std")]
 use async_std::{
